@@ -1,5 +1,6 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const Blog = () => {
     const handleSubmit = (event) => {
@@ -13,6 +14,9 @@ const Blog = () => {
 
     return (
         <div className="antialiased my-5 text-justify">
+            <Helmet>
+                <title>Bite | Blog</title>
+            </Helmet>
             <div className="flex justify-between px-4 mx-auto max-w-screen-xl ">
                 <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
                     
