@@ -81,7 +81,7 @@ const Navbar = () => {
                             </NavLink>
                             </li>
                             <li><NavLink
-                                to="/My ordered items"
+                                to="/my ordered items"
                                 className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "text-red-500 underline" : ""
                                 }
