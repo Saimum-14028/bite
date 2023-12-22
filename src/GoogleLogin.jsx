@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import swal from 'sweetalert';
+import toast from 'react-hot-toast';
 
 const GoogleLogin = () => {
 
@@ -13,9 +14,32 @@ const GoogleLogin = () => {
         
         media()
             .then(res => {
-             //   console.log(res);
+                console.log(res);
                 swal("Done!", "Logged in Successfully!", "success");
                 navigate(location?.state ? location.state : '/');
+
+                const email = res.user?.email;
+                const name = res.user?.displayName;
+                const img = res.user?.photoURL;
+                const createdAt = res.user?.metadata?.creationTime;
+                const user = {email,name,img,createdAt};
+                // send data to the server
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    //mode: 'no-cors',
+                    headers: {
+                        'content-type': 'application/json'
+                        //'Access-Control-Allow-Origin': '*',
+                    },
+                    body: JSON.stringify(user)
+                })
+                .then(res => res.json())
+                .then(data => {
+                   // console.log(data);
+                    if(data.insertedId){
+                        toast.success('User added successfully');
+                    }
+                })
             })
             .catch(error => {
             //    console.log(error);

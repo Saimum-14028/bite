@@ -50,6 +50,28 @@ const Register = () => {
                     toast.success('User created successfully');
                     navigate(location?.state ? location.state : '/');
                 })
+                // console.log(res.user);
+                // console.log(res.user.email);
+                // console.log(res.user.displayName);
+                const createdAt = res.user?.metadata?.creationTime;
+                const user = {email,name,img,createdAt};
+                // send data to the server
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    //mode: 'no-cors',
+                    headers: {
+                        'content-type': 'application/json'
+                        //'Access-Control-Allow-Origin': '*',
+                    },
+                    body: JSON.stringify(user)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    //console.log(data);
+                    if(data.insertedId){
+                        toast.success('User added successfully');
+                    }
+                })
         })
         .catch(error => {
             toast.error(error.message)
