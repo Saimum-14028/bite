@@ -14,7 +14,7 @@ const GoogleLogin = () => {
         
         media()
             .then(res => {
-                console.log(res);
+              //  console.log(res);
                 swal("Done!", "Logged in Successfully!", "success");
                 navigate(location?.state ? location.state : '/');
 

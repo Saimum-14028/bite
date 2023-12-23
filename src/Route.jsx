@@ -5,6 +5,8 @@ import Home from "./Home";
 import Blog from "./Blog";
 import Login from "./Login";
 import Register from "./Register";
+import PrivateRoute from "./PrivateRoute";
+import AddFood from "./AddFood";
 
 const myCreatedRoute =  createBrowserRouter([
     {
@@ -19,6 +21,10 @@ const myCreatedRoute =  createBrowserRouter([
             {
                 path : "/blog",
                 element : <Blog></Blog>
+            },
+            {
+                path : "/add an item",
+                element : <PrivateRoute><AddFood></AddFood></PrivateRoute>
             },
             {
                 path: "login",
