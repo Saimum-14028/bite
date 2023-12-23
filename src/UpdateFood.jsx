@@ -46,10 +46,6 @@ const UpdateFood = () => {
             return;
         }
 
-        const count = 0;
-        const madeBy = user.displayName;
-        const email = user.email;
-
         const newFood = { name, image, origin, price, category, quantity, description, count, madeBy, email };
 
         console.log(newFood);
