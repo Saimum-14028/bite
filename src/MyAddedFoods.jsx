@@ -44,20 +44,20 @@ const MyAddedFoods = () => {
                 {newMyAddedFoods.length ? 
                 
                 <div>
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-10'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-10'>
                 {
                             isShow ? newMyAddedFoods.map((card) => (
                                 <MyAddedFoodsCard key={card._id} card={card}></MyAddedFoodsCard>
                             )) 
 
-                            : newMyAddedFoods.slice(0,4).map((card) => (
+                            : newMyAddedFoods.slice(0,6).map((card) => (
                                 <MyAddedFoodsCard key={card._id} card={card}></MyAddedFoodsCard>
                             ))
                         }
                     </div>
 
                     <div className="flex justify-center items-center">
-                        {newMyAddedFoods.length > 4 && !isShow && <button onClick={()=>setIsShow(!isShow)}  className="btn bg-blue-500">
+                        {newMyAddedFoods.length > 6 && !isShow && <button onClick={()=>setIsShow(!isShow)}  className="btn bg-blue-500">
                             See All
                     </button>}
                     </div>
