@@ -7,6 +7,7 @@ import Login from "./Login";
 import Register from "./Register";
 import PrivateRoute from "./PrivateRoute";
 import AddFood from "./AddFood";
+import MyAddedFoods from "./MyAddedFoods";
 
 const myCreatedRoute =  createBrowserRouter([
     {
@@ -25,6 +26,11 @@ const myCreatedRoute =  createBrowserRouter([
             {
                 path : "/add an item",
                 element : <PrivateRoute><AddFood></AddFood></PrivateRoute>
+            },
+            {
+                path : "/my added items",
+                element : <PrivateRoute><MyAddedFoods></MyAddedFoods></PrivateRoute>,
+                loader: () => fetch('http://localhost:5000/foods'),
             },
             {
                 path: "login",
