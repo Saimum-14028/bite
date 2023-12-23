@@ -1,28 +1,40 @@
 import React, { useContext, useState } from 'react';
-import { Link, useLoaderData, useParams } from 'react-router-dom';
+import { Link, useLoaderData, useParams, useNavigation } from 'react-router-dom';
 import MyAddedFoodsCard from './MyAddedFoodsCard';
 import { AuthContext } from './AuthProvider';
+import { useEffect } from 'react';
 
 const MyAddedFoods = () => {
 
     const { user} = useContext(AuthContext);
+    const [newMyAddedFoods, setnewMyAddedFoods] = useState([]);
 
-    const [isShow,setIsShow] = useState(false)
-   // const {result} = useContext(AuthContext);
-     const MyAddedFoods = useLoaderData();
-   //  console.log(MyAddedFoods);
-    // const { id } = useParams();
+   // console.log(newMyAddedFoods);
 
-    // console.log(user.email,id);
+    useEffect(() => {
+        fetch(`http://localhost:5000/foods?email=${user.email}`)
+            .then(res => res.json())
+            .then(data => setnewMyAddedFoods(data))
+    }, [user.email]);
 
-    //  if(user.email !== id) {
-    //     // MyAddedFoods = useLoaderData();
-    //     // console.log(MyAddedFoods);
-    //     console.log("TEst");
-    //  }
+   //  const { user} = useContext(AuthContext);
+     const [isShow,setIsShow] = useState(false)
+//    // const {result} = useContext(AuthContext);
+//      const MyAddedFoods = useLoaderData();
+//    //  console.log(MyAddedFoods);
+//     // const { id } = useParams();
 
-   //  console.log(id);
-     const newMyAddedFoods = MyAddedFoods.filter(food => food.email === user.email);
+    
+    //  console.log(newMyAddedFoods);
+
+//     //  if(user.email !== id) {
+//     //     // MyAddedFoods = useLoaderData();
+//     //     // console.log(MyAddedFoods);
+//     //     console.log("TEst");
+//     //  }
+
+//    //  console.log(id);
+//      const newMyAddedFoods = MyAddedFoods.filter(food => food.email === user.email);
     // console.log(result);
 
     return (
@@ -51,7 +63,7 @@ const MyAddedFoods = () => {
                     </div>
                 </div>
                  : 
-                 <div className='w-full'>
+                 <div className='w-full h-96'>
                     <h1 className="text-5xl font-bold mt-10 text-center">No Item Found!</h1>
                 </div>}
             </div>

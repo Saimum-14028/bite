@@ -31,7 +31,7 @@ const myCreatedRoute =  createBrowserRouter([
             {
                 path : "/my added items",
                 element : <PrivateRoute><MyAddedFoods></MyAddedFoods></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/foods'),
+                //loader: () => fetch('http://localhost:5000/foods'),
             },
             {
                 path : "update an item/:id",
