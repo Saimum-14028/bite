@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import AddFood from "./AddFood";
 import MyAddedFoods from "./MyAddedFoods";
 import UpdateFood from "./UpdateFood";
+import AllFoodItems from "./AllFoodItems";
 
 const myCreatedRoute =  createBrowserRouter([
     {
@@ -19,6 +20,10 @@ const myCreatedRoute =  createBrowserRouter([
             {
                 path : "/",
                 element : <Home></Home>,
+            },
+            {
+                path : "/all food items",
+                element : <AllFoodItems></AllFoodItems>
             },
             {
                 path : "/blog",
