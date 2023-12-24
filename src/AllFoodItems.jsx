@@ -50,7 +50,7 @@ const AllFoodItems = () => {
 
         const name = form.name.value;
 
-        const MyAddedFoods = newMyAddedFoods.filter(food => food.name === name);
+        const MyAddedFoods = newMyAddedFoods.filter(food => food.name.toLowerCase() === name.toLowerCase());
 
         setnewMyAddedFoods(MyAddedFoods);
 

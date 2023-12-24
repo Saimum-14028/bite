@@ -52,6 +52,7 @@ const MyCartCard = ({card,cart,setCart}) => {
                 <p className='text-xl font-semibold'>Mady By: {card.madeBy}</p>
                 <p className='text-xl font-semibold'>Price: ${card.price}</p>
                 <p className='text-xl font-semibold'>Quantity: {card.orderQuantity}</p>
+                <p className='text-xl font-semibold'>Order Time: {card.orderTime}</p>
                 <p className='text-xl font-semibold'>{card.type}</p>
                     <div className="flex justify-center">
                         <button

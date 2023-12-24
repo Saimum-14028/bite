@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { useNavigate, useLocation, useLoaderData, useNavigation } from 'react-router-dom';
 import Loading from './Loading';
 import { Helmet } from 'react-helmet-async';
+import moment from 'moment';
 
 const OrderFood = () => {
 
@@ -63,7 +64,10 @@ const OrderFood = () => {
 
      //   console.log(quantity);
 
-        const newProduct = { name, image, origin, price, category, quantity , description, count, madeBy, email , orderQuantity, orderBy, orderemail };
+        const orderTime = moment().format('MMMM D, YYYY');
+        console.log(orderTime);
+
+        const newProduct = { name, image, origin, price, category, quantity , description, count, madeBy, email , orderQuantity, orderBy, orderemail, orderTime };
 
       //  console.log(newProduct);
 
