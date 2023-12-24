@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
+import { motion } from "framer-motion"
 
 const DetailsFoodCard = () => {
     const [foodDetails, setfoodDetails] = useState({});
@@ -23,8 +24,12 @@ const DetailsFoodCard = () => {
           <Helmet>
                 <title>Bite | Food Details</title>
             </Helmet>
-          <div className="hero h-48 md:h-72 lg:h-96" style={{backgroundImage: `url(${foodDetails.image})`}}>
-          </div>
+          <motion.div animate={{
+                    scale: [1, 2, 2, 1, 1],
+                    rotate: [0, 0, 270, 270, 0],
+                    
+                  }} className="hero h-48 md:h-72 lg:h-96" style={{backgroundImage: `url(${foodDetails.image})`}}>
+          </motion.div>
           <h1 className="text-4xl font-bold my-5">Name: {foodDetails.name}</h1>
           <p className="card-title my-5">Category: {foodDetails.category}</p>
           <p className="card-title text-red-500 my-5">$Price: {foodDetails.price}</p>

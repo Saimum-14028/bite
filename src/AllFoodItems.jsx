@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AllFoodItemsCard from './AllFoodItemsCard';
 import { Helmet } from 'react-helmet-async';
+import { motion } from "framer-motion"
 
 const AllFoodItems = () => {
     const [newMyAddedFoods, setnewMyAddedFoods] = useState([]);
@@ -91,14 +92,21 @@ const AllFoodItems = () => {
                         
                     </div>
                     : 
-                    <div className='w-full h-96'>
+                    <motion.div animate={{
+                        scale: [1, 2, 2, 1, 1],
+                        rotate: [0, 0, 270, 270, 0],
+                        borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                      }} className='w-full h-48'>
                         <h1 className="text-5xl font-bold mt-10 text-center">No Item Found!</h1>
-                    </div>}
+                    </motion.div>}
                 </div>
             </div>
             <div className='w-11/12 mx-auto my-5'>
                 {/* <p>Current page: {currentPage}</p> */}
-                <button className='btn bg-blue-500' onClick={handlePrevPage}>Prev</button>
+                {
+                    newMyAddedFoods.length ? <button className='btn bg-blue-500' onClick={handlePrevPage}>Prev</button> : <div></div>
+                }
+                
                 {
                     pages.map(page => <button
                         className={currentPage === page ? 'btn btn-active m-1 bg-blue-500' : 'btn m-1'}
@@ -106,7 +114,9 @@ const AllFoodItems = () => {
                         key={page}
                     >{page+1}</button>)
                 }
-                <button className='btn bg-blue-500' onClick={handleNextPage}>Next</button>
+                {
+                    newMyAddedFoods.length ? <button className='btn bg-blue-500' onClick={handleNextPage}>Next</button> : <div></div>
+                }
             </div>
 
 

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import TopFoodCards from './TopFoodCards';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion"
 
 const TopFoods = () => {
 
@@ -45,9 +46,13 @@ const TopFoods = () => {
                     </div>
                 </div>
                  : 
-                 <div className='w-full h-96'>
-                    <h1 className="text-5xl font-bold mt-10 text-center">No Item Found!</h1>
-                </div>}
+                 <motion.div animate={{
+                    scale: [1, 2, 2, 1, 1],
+                    rotate: [0, 0, 270, 270, 0],
+                    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                  }} className='w-full'>
+                    <h1 className="text-3xl font-bold mt-5 text-center">No Item Found!</h1>
+                </motion.div>}
             </div>
         </div>
     );
