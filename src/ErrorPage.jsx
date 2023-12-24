@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion"
 
 const ErrorPage = () => {
     return (
@@ -7,7 +8,11 @@ const ErrorPage = () => {
         <Helmet>
             <title>404 Not Found</title>
         </Helmet>
-        <div className="relative z-10 bg-primary py-[120px]">
+        <motion.div animate={{
+      scale: [1, 2, 2, 1, 1],
+      rotate: [0, 0, 270, 270, 0],
+      borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+    }} className="relative z-10 bg-primary py-[120px]">
           <div className="container mx-auto">
             <div className="-mx-4 flex">
               <div className="w-full px-4">
@@ -40,7 +45,7 @@ const ErrorPage = () => {
             </div>
             <div className="h-full w-1/3 bg-gradient-to-b from-[#FFFFFF14] to-[#C4C4C400]"></div>
           </div>
-        </div>
+        </motion.div>
     </div>
     );
 };
