@@ -53,7 +53,7 @@ const UpdateFood = () => {
 
         // Update data to the server
 
-            fetch(`http://localhost:5000/foods/${singleData._id}`, {
+            fetch(`https://troubled-sweatsuit-hare.cyclic.app/foods/${singleData._id}`, {
                 method: "PUT",
               //  mode: 'no-cors',
                 headers: {

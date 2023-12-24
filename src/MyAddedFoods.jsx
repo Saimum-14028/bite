@@ -13,7 +13,7 @@ const MyAddedFoods = () => {
    // console.log(newMyAddedFoods);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/foods?email=${user.email}`)
+        fetch(`https://troubled-sweatsuit-hare.cyclic.app/foods?email=${user.email}`)
             .then(res => res.json())
             .then(data => setnewMyAddedFoods(data))
     }, [user.email]);

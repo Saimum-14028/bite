@@ -43,7 +43,7 @@ const AddFood = () => {
        // console.log(newFood);
 
         // send data to the server
-        fetch('http://localhost:5000/foods', {
+        fetch('https://troubled-sweatsuit-hare.cyclic.app/foods', {
             method: 'POST',
             //mode: 'no-cors',
             headers: {

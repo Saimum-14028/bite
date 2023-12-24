@@ -68,7 +68,7 @@ const OrderFood = () => {
       //  console.log(newProduct);
 
         // send data to the server
-        fetch('http://localhost:5000/orders', {
+        fetch('https://troubled-sweatsuit-hare.cyclic.app/orders', {
             method: 'POST',
            // mode: 'no-cors',
             headers: {
@@ -96,7 +96,7 @@ const OrderFood = () => {
 
        // console.log(newFood);
 
-            fetch(`http://localhost:5000/foods/${singleData._id}`, {
+            fetch(`https://troubled-sweatsuit-hare.cyclic.app/foods/${singleData._id}`, {
                 method: "PUT",
               //  mode: 'no-cors',
                 headers: {

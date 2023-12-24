@@ -24,7 +24,7 @@ const GoogleLogin = () => {
                 const createdAt = res.user?.metadata?.creationTime;
                 const user = {email,name,img,createdAt};
                 // send data to the server
-                fetch('http://localhost:5000/users', {
+                fetch('https://troubled-sweatsuit-hare.cyclic.app/users', {
                     method: 'POST',
                     //mode: 'no-cors',
                     headers: {

@@ -21,7 +21,7 @@ const MyCartCard = ({card,cart,setCart}) => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/orders/${_id}`, {
+                fetch(`https://troubled-sweatsuit-hare.cyclic.app/orders/${_id}`, {
                     method: 'DELETE'
                   //  mode: 'no-cors',
                 })

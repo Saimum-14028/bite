@@ -17,13 +17,13 @@ const AllFoodItems = () => {
   //  console.log(pages);
 
     useEffect( () =>{
-        fetch('http://localhost:5000/itemCount')
+        fetch('https://troubled-sweatsuit-hare.cyclic.app/itemCount')
         .then(res => res.json())
         .then(data => setCount(data.count))
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/foods?page=${currentPage}&size=${itemsPerPage}`)
+        fetch(`https://troubled-sweatsuit-hare.cyclic.app/foods?page=${currentPage}&size=${itemsPerPage}`)
             .then(res => res.json())
             .then(data => setnewMyAddedFoods(data))
           //  console.log(currentPage, itemsPerPage);

@@ -11,7 +11,7 @@ const TopFoods = () => {
    // console.log(newMyAddedFoods);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/foods?sortField=count&sortOrder=desc`)
+        fetch(`https://troubled-sweatsuit-hare.cyclic.app/foods?sortField=count&sortOrder=desc`)
             .then(res => res.json())
             .then(data => setnewMyAddedFoods(data))
     }, []);
