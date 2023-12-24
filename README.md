@@ -1,8 +1,12 @@
-# React + Vite
+# Bite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Live Website
+#### https://bite-client-side.web.app/
 
-Currently, two official plugins are available:
+### Project Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- All types of food in one place
+- User can add and update food items
+- Create Account via GMAIL. No extra effort needed.
+- Theme preferences for user
+- Privacy protected
