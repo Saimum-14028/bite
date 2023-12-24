@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 
 const DetailsFoodCard = () => {
@@ -19,6 +20,9 @@ const DetailsFoodCard = () => {
    //  console.log(id, foodDetails);
     return (
         <div className="w-11/12 mx-auto">
+          <Helmet>
+                <title>Bite | Food Details</title>
+            </Helmet>
           <div className="hero h-48 md:h-72 lg:h-96" style={{backgroundImage: `url(${foodDetails.image})`}}>
           </div>
           <h1 className="text-4xl font-bold my-5">Name: {foodDetails.name}</h1>

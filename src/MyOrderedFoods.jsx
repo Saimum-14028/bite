@@ -3,6 +3,7 @@ import { Link, useLoaderData, useParams, useNavigation } from 'react-router-dom'
 import { AuthContext } from './AuthProvider';
 import { useEffect } from 'react';
 import MyCartCard from './MyCartCard';
+import { Helmet } from 'react-helmet-async';
 
 const MyOrderedFoods = () => {
 
@@ -28,6 +29,9 @@ const MyOrderedFoods = () => {
 
     return (
        < div className='w-11/12 mx-auto my-5'>
+        <Helmet>
+                <title>Bite | My Orders</title>
+            </Helmet>
         <div>
 
 {cart.length ? 

@@ -3,6 +3,7 @@ import swal from 'sweetalert';
 import { AuthContext } from './AuthProvider';
 import { useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const AddFood = () => {
 
@@ -64,6 +65,9 @@ const AddFood = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Bite | Add Food</title>
+            </Helmet>
             <section className="">
                 <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
                     <h2 className="mb-4 text-2xl font-bold  text-center">Add a Food Item</h2>

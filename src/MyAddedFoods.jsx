@@ -3,6 +3,7 @@ import { Link, useLoaderData, useParams, useNavigation } from 'react-router-dom'
 import MyAddedFoodsCard from './MyAddedFoodsCard';
 import { AuthContext } from './AuthProvider';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const MyAddedFoods = () => {
 
@@ -40,6 +41,10 @@ const MyAddedFoods = () => {
     return (
         <div className='w-11/12 mx-auto my-5'>
             <div>
+
+                <Helmet>
+                    <title>Bite | My Foods</title>
+                </Helmet>
 
                 {newMyAddedFoods.length ? 
                 

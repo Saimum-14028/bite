@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AllFoodItemsCard from './AllFoodItemsCard';
+import { Helmet } from 'react-helmet-async';
 
 const AllFoodItems = () => {
     const [newMyAddedFoods, setnewMyAddedFoods] = useState([]);
@@ -25,7 +26,7 @@ const AllFoodItems = () => {
         fetch(`http://localhost:5000/foods?page=${currentPage}&size=${itemsPerPage}`)
             .then(res => res.json())
             .then(data => setnewMyAddedFoods(data))
-            console.log(currentPage, itemsPerPage);
+          //  console.log(currentPage, itemsPerPage);
     }, [currentPage, itemsPerPage]);
 
 
@@ -52,11 +53,14 @@ const AllFoodItems = () => {
 
         setnewMyAddedFoods(MyAddedFoods);
 
-        console.log(MyAddedFoods);
+       // console.log(MyAddedFoods);
     }
 
     return (
         <div>
+            <Helmet>
+                <title>Bite | All Foods</title>
+            </Helmet>
             <form className='w-11/12 mx-auto my-5' onSubmit={handleSearch}>
                             <div className="items-center mx-auto space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
                                 <div className="relative w-full">

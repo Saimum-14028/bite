@@ -4,6 +4,7 @@ import { AuthContext } from './AuthProvider';
 import { useContext } from 'react';
 import { useNavigate, useLocation, useLoaderData, useNavigation } from 'react-router-dom';
 import Loading from './Loading';
+import { Helmet } from 'react-helmet-async';
 
 const OrderFood = () => {
 
@@ -112,6 +113,9 @@ const OrderFood = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Bite | Confirm Order</title>
+            </Helmet>
             <section className="">
                 <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
                     <h2 className="mb-4 text-2xl font-bold  text-center">Order a Food Item</h2>
