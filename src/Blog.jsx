@@ -8,7 +8,7 @@ const Blog = () => {
 
         // get field values 
         const comment = event.target.comment.value;
-        console.log(comment);
+       // console.log(comment);
         toast.success('Thanks for your comment');
     }
 

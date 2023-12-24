@@ -28,7 +28,7 @@ const OrderFood = () => {
         event.preventDefault();
 
         const form = event.target;
-        console.log(event.timeStamp);
+     //   console.log(event.timeStamp);
 
         const orderQuantity = parseInt(form.quantity.value);
 
@@ -39,13 +39,13 @@ const OrderFood = () => {
 
         if(orderQuantity<1){
             toast.error('Please input valid Quantity');
-            console.log(quantity, orderQuantity);
+      //      console.log(quantity, orderQuantity);
             return;
         }
 
         if(orderQuantity > quantity){
             toast.error('Please input valid Quantity');
-            console.log(quantity, orderQuantity);
+        //    console.log(quantity, orderQuantity);
             return;
         }
 
@@ -54,18 +54,18 @@ const OrderFood = () => {
 
         if(orderemail === email){
             toast.error('Sorry!You cant buy your own product');
-            console.log(email, orderemail);
+         //   console.log(email, orderemail);
             return;
         }
         
         quantity = quantity-orderQuantity;
         count = parseInt(count) + 1;
 
-        console.log(quantity);
+     //   console.log(quantity);
 
         const newProduct = { name, image, origin, price, category, quantity , description, count, madeBy, email , orderQuantity, orderBy, orderemail };
 
-        console.log(newProduct);
+      //  console.log(newProduct);
 
         // send data to the server
         fetch('http://localhost:5000/orders', {
@@ -94,7 +94,7 @@ const OrderFood = () => {
 
         const newFood = { name, image, origin, price, category, quantity, description, count, madeBy, email };
 
-        console.log(newFood);
+       // console.log(newFood);
 
             fetch(`http://localhost:5000/foods/${singleData._id}`, {
                 method: "PUT",
@@ -107,8 +107,8 @@ const OrderFood = () => {
                 })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(data);
-                    navigate('/');
+                   // console.log(data);
+                    navigate('/my ordered items');
             });
     }
     return (

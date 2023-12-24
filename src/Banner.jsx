@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion"
 
 const Banner = () => {
     return (
-        <div className='lg:h-96 md:w-11/12 mx-auto my-5'>
+        <motion.div animate={{
+            scale: [1, 2, 2, 1, 1],
+            rotate: [0, 0, 270, 270, 0],
+            borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+          }} className='lg:h-96 md:w-11/12 mx-auto my-5'>
             <div className="hero h-full" style={{backgroundImage: 'url(https://i.ibb.co/52h5MCT/pexels-chan-walrus-958545.jpg)'}}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
@@ -14,7 +19,7 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

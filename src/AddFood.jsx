@@ -57,7 +57,7 @@ const AddFood = () => {
               //  console.log(data);
                 if(data.insertedId){
                     swal("Done!", "Food Added Successfully!", "success");
-                    navigate('/');
+                    navigate('/my added items');
                   //  console.log(location);
                 }
             })

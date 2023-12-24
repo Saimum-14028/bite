@@ -49,7 +49,7 @@ const UpdateFood = () => {
 
         const newFood = { name, image, origin, price, category, quantity, description, count, madeBy, email };
 
-        console.log(newFood);
+      //  console.log(newFood);
 
         // Update data to the server
 
@@ -67,7 +67,7 @@ const UpdateFood = () => {
                   //  console.log(data);
                     if(data.modifiedCount || data.upsertedCount){
                         swal("Done!", "Product Updated Successfully!", "success");
-                        navigate('/');
+                        navigate('/my added items');
                     }
                     else{
                         toast.error('Data is same. Please Update');
