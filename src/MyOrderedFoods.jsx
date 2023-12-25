@@ -15,7 +15,7 @@ const MyOrderedFoods = () => {
    // console.log(newMyOrderedFoods);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?orderemail=${user.email}`)
+        fetch(`https://troubled-sweatsuit-hare.cyclic.app/orders?orderemail=${user.email}`)
             .then(res => res.json())
          //   console.log(res)
             .then(data => setCart(data))
